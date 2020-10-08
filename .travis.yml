@@ -2,9 +2,15 @@ language: go
 go:
   - "1.14"
 env: GO111MODULE=on
-os:
-  - linux
-  - osx
+
+matrix:
+  include:
+   - os: linux
+     arch: amd64
+   - os: linux
+     arch: ppc64le
+   - os : osx
+     arch: amd64
 dist: bionic
 addons:
   apt:
